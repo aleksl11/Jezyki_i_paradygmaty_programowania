@@ -2,5 +2,5 @@ rodzic(zofia, marcin).
 rodzic(andrzej, marcin).
 rodzic(andrzej, kasia).
 rodzic(marcin, ania).
-rodzic(marcin, krzyú).
-rodzic(krzyú, miko≥aj).
+rodzic(marcin, krzy≈õ).
+rodzic(krzy≈õ, miko≈Çaj).
