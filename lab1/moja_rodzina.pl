@@ -14,7 +14,7 @@ osoba(daniel, zdzislaw, zofia, mezczyzna, 38).
 osoba(ewa, stanislaw, emilia, kobieta, 69).
 osoba(kazik, walenty, maria, mezczyzna, 69).
 osoba(zofia, kamil, beata, kobieta, 64).
-osoba(zdzislaw, rober, gabriela, mezczyzna, 65).
+osoba(zdzislaw, robert, gabriela, mezczyzna, 65).
 
 rodzenstwo(X,Y):-
      osoba(X,A,B,_,_),
