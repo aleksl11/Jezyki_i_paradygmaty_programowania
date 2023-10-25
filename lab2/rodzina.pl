@@ -2,15 +2,15 @@ rodzic(zofia, marcin).
 rodzic(andrzej, marcin).
 rodzic(andrzej, kasia).
 rodzic(marcin, ania).
-rodzic(marcin, krzyœ).
-rodzic(krzyœ, miko³aj).
+rodzic(marcin, krzyÅ›).
+rodzic(krzyÅ›, mikoÅ‚aj).
 kobieta(zofia).
 kobieta(kasia).
 kobieta(ania).
-mê¿czyzna(andrzej).
-mê¿czyzna(marcin).
-mê¿czyzna(krzyœ).
-mê¿czyzna(miko³aj).
+mÄ™Å¼czyzna(andrzej).
+mÄ™Å¼czyzna(marcin).
+mÄ™Å¼czyzna(krzyÅ›).
+mÄ™Å¼czyzna(mikoÅ‚aj).
 potomek(Y,X):-
 	rodzic(X,Y).
 matka(X,Y):-
