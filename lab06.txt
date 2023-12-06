@@ -1,0 +1,35 @@
+zadanie 1
+(+ 2 (/(* 3 4) 8))
+
+zadanie 2
+(+ (sin 12) (cos (mod 256 32)))
+
+zadanie 3
+(defun suma (x y) (+ x y))
+ 
+zadanie 4 
+(defun parzysta (x) (evenp x))
+
+zadanie 5
+(defun silnia (x) (if (> x 0) (* x (silnia (- x 1))) 1))
+
+zadanie 6
+(defun fib(x) (cond ((= x 1) 1) ((= x 2) 1) ((> x 2) (+ (fib (- x 1)) (fib (- x 2))))))
+
+zadanie 7
+(defun sum_odd (x y) 
+	(let ((sum 0)) 
+		(loop 
+			(when (oddp x) (setq sum (+ sum x)))
+			(incf x)
+			(when (> x y) (return sum)))))
+
+zadanie 8
+(defun sum_pow (x y)
+	(let ((sum 0))
+		(loop 
+			(setq sum (+ (* x x) sum))
+			(incf x)
+			(when (> x y) (return sum)))))
+			
+
