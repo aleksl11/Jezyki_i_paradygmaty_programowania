@@ -1,0 +1,61 @@
+(do 
+	((i 0 (incf i)) 
+	((j 10) (dcef j))) ((zerop j) 'done) (print (+ i j )))
+	
+	
+zadanie 1
+Łączenie 2 list
+
+(defun laczenie1 (l1 l2)
+	(append l1 l2))
+	
+(defun laczenie2 (l1 l2)
+	(let ((l3 '()))
+		(dolist (item l1)
+			(push item l3))
+		(dolist (item l2)
+			(push item l3))
+		(reverse l3)
+ 	)
+)
+
+zadanie 2
+Napisz funkcję która odwraca listę
+
+(defun odwracanie (lista)
+	(let ((wynik '()))
+		(dolist (item lista)
+			(push item wynik)
+		)
+		wynik
+	)
+)
+
+zadanie 3
+czy lista jest palindromem
+
+(defun palindrom (lista)
+	(let ((listaodwr (odwracanie lista)))
+		(equal lista listaodwr)
+	)
+)
+
+zadanie 4
+Napisz funkcję, która sortuje rosnąco listę liczb całkowitych
+
+(defun sortowanie (lista)
+	(let ((wynik '()))
+		(do (i 0(incf i))
+			(do (j 1(incf j))
+				(when (> i j) (let ((temp (nth i lista)))
+									(setf (nth i lista) (nth j lista))
+									(setf (nth j lista) temp)
+								)
+				)
+				(when (> j (- (length list) 1)) return)
+			)
+			(when (> i (- (length list) 1)) return)
+		)
+		wynik
+	)
+)
