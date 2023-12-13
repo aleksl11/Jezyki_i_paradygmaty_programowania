@@ -76,3 +76,61 @@ w wyniku jest tylko tyle iloczynów ile elementów ma krótsza lista
 	)
 )
 
+zadanie 6
+Napisz funkcję, która zlicza ilość wystąpień liczb podzielnych przez trzy na podanej liście
+
+(defun podzielneprzez3 (lista)
+	(let ((wynik 0))
+		(dolist (item lista)
+			(when (= (rem item 3) 0) (incf wynik))
+		) 
+		wynik
+	)
+)
+
+zadanie 7
+Napisz funkcję w języku CLisp, który dla podanej listy liczb całkowitych, wypisze ile jest 
+liczba podzielnych przez N na podanej liście, N powinno być parametrem funkcji.
+
+(defun podzielneprzezn (lista n)
+	(let ((wynik 0))
+		(dolist (item lista)
+			(when (= (rem item n) 0) (incf wynik))
+		) 
+		wynik
+	)
+)
+
+zadanie 8
+Napisz funkcję, która dla podanego stosu wybierze tylko wartości podzielne przez 5, i zapisze 
+na stosie w odwrotnym porządku,
+
+(defun podzielneprzez5 (stos)
+	(let ((wynik nil)(liczba 0))
+		(dotimes (i (length stos))
+			(setq liczba (pop stos))
+			(when (= (rem liczba 5) 0) (push liczba wynik))
+		)
+		wynik
+	)
+)
+
+zadanie 9
+Napisz funkcję, która generuję listę liczb całkowitych z przedziału <A,B> podanego przez 
+użytkownika. Można zastosować funkcję push.
+działa tylko jeśli pierwsza liczba z zakresu jest całkowita
+
+(defun calkowite (a b)
+	(let ((wynik '()))
+		(loop
+			(when (> a b) (return))
+			(push a wynik)
+			(incf a)
+		)
+		wynik
+	)
+)
+
+zadanie 10
+Napisz funkcję, która generuje listę znaków z podanego przedziału kodów ASCII.
+
