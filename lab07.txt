@@ -44,18 +44,35 @@ zadanie 4
 Napisz funkcję, która sortuje rosnąco listę liczb całkowitych
 
 (defun sortowanie (lista)
-	(let ((wynik '()))
-		(do (i 0(incf i))
-			(do (j 1(incf j))
-				(when (> i j) (let ((temp (nth i lista)))
+	(dotimes (i (length lista))
+		(dotimes (j (length lista))
+			(when (< (nth i lista) (nth j lista)) (let ((temp (nth i lista)))
 									(setf (nth i lista) (nth j lista))
 									(setf (nth j lista) temp)
 								)
-				)
-				(when (> j (- (length list) 1)) return)
 			)
-			(when (> i (- (length list) 1)) return)
 		)
-		wynik
+	)
+	lista
+)
+
+zadanie 5
+Napisz funkcję, która oblicz iloczyn dwóch list liczbowych parami różnych, w wyniku 
+otrzymujemy listę iloczynów,
+
+w wyniku jest tylko tyle iloczynów ile elementów ma krótsza lista
+
+(defun iloczynlist (l1 l2)
+	(let ((wynik '()))
+		(if (< (length l1) (length l2))
+			(dotimes (i (length l1))
+				(push (* (nth i l1) (nth i l2)) wynik)
+			)
+			(dotimes (i (length l2))
+				(push (* (nth i l1) (nth i l2)) wynik)
+			)
+		)
+		(reverse wynik)
 	)
 )
+
