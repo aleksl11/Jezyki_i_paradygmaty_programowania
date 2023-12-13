@@ -118,10 +118,10 @@ na stosie w odwrotnym porządku,
 zadanie 9
 Napisz funkcję, która generuję listę liczb całkowitych z przedziału <A,B> podanego przez 
 użytkownika. Można zastosować funkcję push.
-działa tylko jeśli pierwsza liczba z zakresu jest całkowita
 
 (defun calkowite (a b)
 	(let ((wynik '()))
+		(setq a (ceiling a))
 		(loop
 			(when (> a b) (return))
 			(push a wynik)
@@ -134,3 +134,14 @@ działa tylko jeśli pierwsza liczba z zakresu jest całkowita
 zadanie 10
 Napisz funkcję, która generuje listę znaków z podanego przedziału kodów ASCII.
 
+(defun listaascii (a b)
+	(setq a (ceiling a))
+	(let ((wynik '()))
+		(loop
+			(when (> a b) (return))
+			(push (code-char a) wynik)
+			(incf a)
+		)
+		(reverse wynik)
+	)
+)
