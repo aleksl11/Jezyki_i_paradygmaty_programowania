@@ -27,30 +27,71 @@
 				 :isbn "1234")
 )				 
 
+
 (defvar *lista* '())
 
-(defun dodaj ((k ksiazka))
-		(push k *lista*)
-)
-
 (defun sprawdz (isbn)
+	(let ((wynik "nie"))
 	(loop for k in *lista*
 	do (when (equal isbn (ksiazka-isbn k))
-			(print "jest")
+			(setq wynik "jest")
 		))
+	wynik
+	)	
 )
 
+(defun dodaj ()
+	(let ((tytul)(autor)(wydawnictwo)(rok-wydania)(isbn))
+		(format t "Podaj tytul: ")
+    	(finish-output)
+        (setq tytul (read))
+		(format t "Podaj autora: ")
+    	(finish-output)
+        (setq autor (read))
+		(format t "Podaj wydawnictwo: ")
+    	(finish-output)
+        (setq wydawnictwo (read))
+		(format t "Podaj rok wydania: ")
+    	(finish-output)
+        (setq rok-wydania (read))
+		(format t "Podaj isbn: ")
+    	(finish-output)
+        (setq isbn (read))
+		(if (equal "jest" (sprawdz isbn))
+			(format t "Ksiazka o danym isbn juz jest w bibliotece")
+			(push (make-instance 'ksiazka
+                 :tytul tytul
+                 :autor autor
+                 :wydawnictwo wydawnictwo
+				 :rok-wydania rok-wydania
+				 :isbn isbn) *lista*)
+		)
+	)
+)
 		  
 (defun usun (isbn)
 	(when (equal "jest" (sprawdz isbn))
-		(loop for k in *lista*
-			(when (equal isbn (ksiazka-isbn k))
-				;; dokonczycc!!!!
+		(dolist (item *lista*)
+			(when (equal isbn (ksiazka-isbn item))
+				(setq *lista* (delete item *lista*))
 			)
 		)
 	)
 )
 
+(defun wypisz ()
 (loop for x in *lista*
 	do (display-ksiazka x) )
+)
+
+(dodaj)
+(dodaj)
+(dodaj)
+
+(wypisz)
+(print "  ")
+(usun 1234)
+(wypisz)
 	
+(print (sprawdz 1234))
+(print (sprawdz 4321))
